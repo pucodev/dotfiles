@@ -50,5 +50,19 @@ return {
       end,
       desc = "Help pages",
     },
+    {
+      "<leader>fc",
+      function()
+        require("telescope.builtin").commands()
+      end,
+      desc = "Find commands",
+    },
+    {
+      "<leader>fk",
+      function()
+        require("telescope.builtin").keymaps()
+      end,
+      desc = "Find keymaps",
+    },
   },
 }

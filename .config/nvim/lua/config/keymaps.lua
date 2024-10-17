@@ -82,3 +82,7 @@ vim.keymap.set("n", "U", "<C-r>", { desc = "Redo" })
 
 -- Select All
 vim.keymap.set("n", "<leader>ra", "gg<S-v>G", { desc = "Select all" })
+
+-- Windows
+map("n", "<leader>-", "<C-W>s", { desc = "Split Window Below", remap = true })
+map("n", "<leader>|", "<C-W>v", { desc = "Split Window Right", remap = true })
