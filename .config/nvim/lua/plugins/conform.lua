@@ -6,21 +6,22 @@ return {
 
     conform.setup({
       formatters_by_ft = {
-        javascript = { "prettierd" },
-        vue = { "prettierd" },
-        typescript = { "prettierd" },
-        javascriptreact = { "prettierd" },
-        typescriptreact = { "prettierd" },
-        svelte = { "prettierd" },
         css = { "prettierd" },
-        html = { "prettierd" },
-        json = { "prettierd" },
-        yaml = { "prettierd" },
-        markdown = { "prettierd" },
         graphql = { "prettierd" },
+        html = { "prettierd" },
+        javascript = { "prettierd" },
+        javascriptreact = { "prettierd" },
+        json = { "prettierd" },
         lua = { "stylua" },
-        python = { "isort", "black" },
+        markdown = { "prettierd" },
         php = { "pretty-php" },
+        python = { "isort", "black" },
+        sql = { "sql-formatter" },
+        svelte = { "prettierd" },
+        typescript = { "prettierd" },
+        typescriptreact = { "prettierd" },
+        vue = { "prettierd" },
+        yaml = { "prettierd" },
         -- php = { "php-cs-fixer" }, -- Lento
       },
       format_on_save = {
@@ -30,6 +31,9 @@ return {
       },
       notify_on_error = true,
       formatters = {
+        ["sql-formatter"] = {
+          command = "sql-formatter",
+        },
         ["php-cs-fixer"] = {
           command = "php-cs-fixer",
           args = {
