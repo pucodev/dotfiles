@@ -32,7 +32,6 @@ require("mason-lspconfig").setup({
   ensure_installed = {
     "lua_ls",
     "intelephense",
-    -- "ts_ls",
     "docker_compose_language_service",
     "dockerls",
     "pyright",
@@ -46,6 +45,24 @@ require("mason-lspconfig").setup({
   handlers = {
     function(server_name)
       require("lspconfig")[server_name].setup({})
+    end,
+
+    vtsls = function()
+      require("lspconfig").vtsls.setup({
+        commands = {
+          OrganizeImports = {
+            function()
+              local param = {
+                command = "typescript.organizeImports",
+                arguments = { vim.api.nvim_buf_get_name(0) },
+                title = "Organize imports !!!",
+              }
+              vim.lsp.buf.execute_command(param)
+            end,
+            description = "Organize imports",
+          },
+        },
+      })
     end,
 
     -- Activar cuando se va a usar volar con vue 3
@@ -77,20 +94,23 @@ require("mason-lspconfig").setup({
   },
 })
 
+vim.keymap.set("n", "<leader>co", ":OrganizeImports<CR>", { desc = "Organize imports", silent = true })
+
 ---
 -- Formatters and linters
 ---
 local mason_tool_installer = require("mason-tool-installer")
 mason_tool_installer.setup({
   ensure_installed = {
-    "prettierd", -- prettier formatter
-    "stylua", -- lua formatter
-    "isort", -- python formatter
     "black", -- python formatter
-    "pylint", -- python linter
     "eslint_d", -- js linter
-    "pretty-php", -- php formatter
+    "isort", -- python formatter
     "php-cs-fixer", -- php formatter
+    "prettierd", -- prettier formatter
+    "pretty-php", -- php formatter
+    "pylint", -- python linter
+    "sql-formatter", -- sql
+    "stylua", -- lua formatter
   },
 })
 
