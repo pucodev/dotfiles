@@ -1,12 +1,9 @@
 return {
-  "numToStr/Comment.nvim",
+  "echasnovski/mini.comment",
+  version = "*",
   opts = {
-    toggler = {
-      ---Line-comment toggle keymap
-      line = "gcc",
-      ---Block-comment toggle keymap
-      block = "gbc",
+    options = {
+      ignore_blank_line = true,
     },
   },
 }
-
