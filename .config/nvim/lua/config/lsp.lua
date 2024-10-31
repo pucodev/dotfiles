@@ -169,6 +169,7 @@ end)
 ---
 local cmp = require("cmp")
 local cmp_window = require("cmp.config.window")
+local neogen = require("neogen")
 
 -- `/` cmdline setup.
 cmp.setup.cmdline("/", {
@@ -263,7 +264,9 @@ cmp.setup({
     end),
 
     ["<Tab>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then
+      if neogen.jumpable() then
+        neogen.jump_next()
+      elseif cmp.visible() then
         cmp.select_next_item()
       elseif luasnip.locally_jumpable(1) then
         luasnip.jump(1)
@@ -273,7 +276,9 @@ cmp.setup({
     end, { "i", "s" }),
 
     ["<S-Tab>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then
+      if neogen.jumpable(true) then
+        neogen.jump_prev()
+      elseif cmp.visible() then
         cmp.select_prev_item()
       elseif luasnip.locally_jumpable(-1) then
         luasnip.jump(-1)
