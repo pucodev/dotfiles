@@ -12,9 +12,12 @@ return {
         { "<leader>c", group = "code" },
         { "<leader>f", group = "file/find" },
         { "<leader>g", group = "git" },
+        { "<leader><space>", group = "custom keys", icon = { icon = "" } },
         -- { "<leader>gh", group = "hunks" },
         { "<leader>q", group = "quit/session" },
         { "<leader>s", group = "search" },
+        { "<leader>ca", group = "add annotation" },
+        { "<leader>cp", group = "package", icon = { icon = "" } },
         { "<leader>u", group = "ui", icon = { icon = "󰙵 ", color = "cyan" } },
         { "<leader>x", group = "diagnostics/quickfix", icon = { icon = "󱖫 ", color = "green" } },
         {
