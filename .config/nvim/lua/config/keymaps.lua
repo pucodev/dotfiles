@@ -21,7 +21,7 @@ map("n", "[b", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
 map("n", "]b", "<cmd>bnext<cr>", { desc = "Next Buffer" })
 map("n", "<leader>bb", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
 map("n", "<leader>`", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
-map("n", "<leader>bD", "<cmd>:bd<cr>", { desc = "Delete Buffer and Window" })
+map("n", "<leader>bd", "<cmd>:bd<cr>", { desc = "Delete Buffer and Window" })
 
 -- Clear search with <esc>
 map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and Clear hlsearch" })
@@ -63,10 +63,6 @@ map("n", "<leader>wq", "<C-W>c", { desc = "Delete Window", remap = true })
 map({ "n", "x", "v" }, "d", '"_d', { desc = "Delete without clipboard", noremap = true, silent = true })
 map({ "n", "x", "v" }, "c", '"_c', { desc = "Change without clipboard", noremap = true, silent = true })
 
--- delete copping to clipboard
-map({ "n", "x", "v" }, "<leader>rd", '"+d', { desc = "Delete and save clipboard", noremap = true, silent = true })
-map({ "n", "x", "v" }, "<leader>rc", '"+c', { desc = "Change and save clipboard", noremap = true, silent = true })
-
 -- Keeping the cursor centered.
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Scroll downwards" })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Scroll upwards" })
@@ -80,8 +76,18 @@ vim.keymap.set("v", ">", ">gv")
 -- Make U opposite to u.
 vim.keymap.set("n", "U", "<C-r>", { desc = "Redo" })
 
--- Select All
-vim.keymap.set("n", "<leader>ra", "gg<S-v>G", { desc = "Select all" })
+-- Custom remaps
+vim.keymap.set("n", "<leader><space>a", "gg<S-v>G", { desc = "Select all" })
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader><space>b",
+  ":norm yygccp<CR>",
+  { desc = "Copy, comment and paste", noremap = true, silent = true }
+)
+
+--- delete copping to clipboard
+map({ "n", "x", "v" }, "<leader><space>d", '"+d', { desc = "Delete and save clipboard", noremap = true, silent = true })
+map({ "n", "x", "v" }, "<leader><space>c", '"+c', { desc = "Change and save clipboard", noremap = true, silent = true })
 
 -- Windows
 map("n", "<leader>-", "<C-W>s", { desc = "Split Window Below", remap = true })
