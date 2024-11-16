@@ -84,6 +84,19 @@ vim.api.nvim_set_keymap(
   ":norm yygccp<CR>",
   { desc = "Copy, comment and paste", noremap = true, silent = true }
 )
+vim.api.nvim_set_keymap(
+  "v",
+  "<leader><leader>S",
+  'y/<C-r>"<CR>',
+  { desc = "Search selected text", noremap = true, silent = true }
+)
+
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader><leader>s",
+  'yiw/<C-r>"<CR>',
+  { desc = "Select all word and search", noremap = true, silent = true }
+)
 
 --- delete copping to clipboard
 map({ "n", "x", "v" }, "<leader><space>d", '"+d', { desc = "Delete and save clipboard", noremap = true, silent = true })
