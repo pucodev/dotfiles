@@ -24,7 +24,8 @@ return {
       "<leader>ff",
       function()
         require("telescope.builtin").find_files({
-          find_command = { "rg", "--files", "--iglob", "!.git", "--hidden" },
+          -- find_command = { "rg", "--files", "--iglob", "!.git", "--hidden" },
+          find_command = { "rg", "--files", "--iglob", "!.git" },
         })
       end,
       desc = "Find files",
