@@ -20,6 +20,7 @@ return {
         { "<leader>cp", group = "package", icon = { icon = "" } },
         { "<leader>u", group = "ui", icon = { icon = "󰙵 ", color = "cyan" } },
         { "<leader>x", group = "diagnostics/quickfix", icon = { icon = "󱖫 ", color = "green" } },
+        { "<leader>d", group = "diagnostics", icon = { icon = "", color = "yellow" } },
         {
           "<leader>b",
           group = "buffer",

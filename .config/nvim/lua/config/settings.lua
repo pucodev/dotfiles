@@ -45,6 +45,9 @@ vim.g.markdown_recommended_style = 0
 -- Cambiamos el color de la seleccion
 vim.cmd("hi Visual cterm=bold gui=bold guibg=#006991")
 
+-- **********************
+-- Config diagnostic
+-- **********************
 vim.diagnostic.config({
   virtual_text = true,
   update_in_insert = false,
@@ -67,3 +70,15 @@ vim.diagnostic.config({
     },
   },
 })
+
+vim.keymap.set("n", "<leader>de", function()
+  vim.diagnostic.open_float({ scope = "line" })
+end, { desc = "Show diagnostic complete message" })
+
+vim.keymap.set("n", "<leader>dp", function()
+  vim.diagnostic.jump({ count = -1, float = false })
+end, { desc = "Previous diagnostic" })
+
+vim.keymap.set("n", "<leader>dn", function()
+  vim.diagnostic.jump({ count = 1, float = false })
+end, { desc = "Next diagnostic" })
