@@ -55,8 +55,8 @@ map("n", "<leader>ui", vim.show_pos, { desc = "Inspect Pos" })
 map("n", "<leader>uI", "<cmd>InspectTree<cr>", { desc = "Inspect Tree" })
 
 -- windows
-map("n", "<leader>w-", "<C-W>s", { desc = "Split Window Below", remap = true })
-map("n", "<leader>w|", "<C-W>v", { desc = "Split Window Right", remap = true })
+map("n", "<leader>ws", ":vsplit | wincmd h | bprevious<CR>", { desc = "Split and go to previous buffer" })
+map("n", "<leader>wS", ":split | wincmd k | bprevious<CR>", { desc = "Horizontal split and go to previous buffer" })
 map("n", "<leader>wq", "<C-W>c", { desc = "Delete Window", remap = true })
 
 -- Delete and change not copy to clipboard
@@ -102,6 +102,19 @@ vim.api.nvim_set_keymap(
 map({ "n", "x", "v" }, "<leader><space>d", '"+d', { desc = "Delete and save clipboard", noremap = true, silent = true })
 map({ "n", "x", "v" }, "<leader><space>c", '"+c', { desc = "Change and save clipboard", noremap = true, silent = true })
 
--- Windows
-map("n", "<leader>-", "<C-W>s", { desc = "Split Window Below", remap = true })
-map("n", "<leader>|", "<C-W>v", { desc = "Split Window Right", remap = true })
+-- Reload Neovim config
+map("n", "<leader>r", ":source ~/.config/nvim/init.lua<CR>", { desc = "Reload Neovim config" })
+
+-- Window maximixes
+map({ "n", "x", "v" }, "<leader>ww", "<cmd>WindowsMaximize<cr>", {
+  desc = "Toggle Maximize Window",
+})
+map({ "n", "x", "v" }, "<leader>wv", "<cmd>WindowsMaximizeVertically<cr>", {
+  desc = "Toggle Maximize Window Vertically",
+})
+map({ "n", "x", "v" }, "<leader>wh", "<cmd>WindowsMaximizeHorizontally<cr>", {
+  desc = "Toggle Maximize Window Horizontally",
+})
+map({ "n", "x", "v" }, "<leader>we", "<cmd>WindowsEqualize<cr>", {
+  desc = "Toggle Equalize Window",
+})
