@@ -36,6 +36,7 @@ require("mason-lspconfig").setup({
     "dockerls",
     "pyright",
     "vtsls",
+    "emmet_language_server",
 
     -- Vetur - Vue 2
     "vuels",
