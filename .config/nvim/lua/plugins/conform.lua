@@ -7,13 +7,16 @@ return {
     conform.setup({
       formatters_by_ft = {
         css = { "prettierd" },
+        scss = { "prettierd" },
+        sass = { "prettierd" },
         graphql = { "prettierd" },
         html = { "prettierd" },
         javascript = { "prettierd" },
         javascriptreact = { "prettierd" },
         json = { "prettierd" },
         lua = { "stylua" },
-        markdown = { "prettierd" },
+        markdown = { "prettierd_mdx" },
+        mdx = { "prettierd" },
         php = { "pretty-php" },
         python = { "isort", "black" },
         sql = { "sql-formatter" },
@@ -31,6 +34,13 @@ return {
       },
       notify_on_error = true,
       formatters = {
+        ["prettierd_mdx"] = {
+          command = "prettierd",
+          args = function(_, ctx)
+            return { "--plugin-search-dir=.", "--parser=mdx", ctx.filename }
+          end,
+          stdin = true,
+        },
         ["sql-formatter"] = {
           command = "sql-formatter",
         },
