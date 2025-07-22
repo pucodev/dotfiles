@@ -17,3 +17,4 @@ Donde `{FOLDER_NAME}` es la carpeta que quieres instalar, por ejemplo: `nvim`, `
 
 - `nvim/` — Configuración de Neovim, plugins y utilidades
 - `tmux/` — Configuración de tmux
+- `kitty/` — Configuración de kitty
