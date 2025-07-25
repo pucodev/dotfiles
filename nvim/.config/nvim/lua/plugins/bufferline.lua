@@ -19,6 +19,7 @@ return {
     options = {
       always_show_bufferline = false,
       diagnostics = "nvim_lsp",
+      separator_style = "slant",
       diagnostics_indicator = function(count, level, diagnostics_dict, context)
         local s = " "
         for e, n in pairs(diagnostics_dict) do
@@ -29,10 +30,7 @@ return {
       end,
       offsets = {
         {
-          filetype = "neo-tree",
-          text = "Neo-tree",
-          highlight = "Directory",
-          text_align = "left",
+          filetype = "snacks_layout_box",
         },
       },
     },

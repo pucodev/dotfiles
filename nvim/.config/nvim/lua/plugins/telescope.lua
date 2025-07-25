@@ -19,51 +19,51 @@ return {
       },
     },
   },
-  keys = {
-    {
-      "<leader>ff",
-      function()
-        require("telescope.builtin").find_files({
-          -- find_command = { "rg", "--files", "--iglob", "!.git", "--hidden" },
-          find_command = { "rg", "--files", "--iglob", "!.git" },
-        })
-      end,
-      desc = "Find files",
-    },
-    {
-      "<leader>fg",
-      function()
-        require("telescope.builtin").live_grep()
-      end,
-      desc = "Grep",
-    },
-    {
-      "<leader>fb",
-      function()
-        require("telescope.builtin").buffers()
-      end,
-      desc = "Find in open buffers",
-    },
-    {
-      "<leader>fh",
-      function()
-        require("telescope.builtin").help_tags()
-      end,
-      desc = "Help pages",
-    },
-    {
-      "<leader>fc",
-      function()
-        require("telescope.builtin").commands()
-      end,
-      desc = "Find commands",
-    },
-    {
-      "<leader>fk",
-      function()
-        require("telescope.builtin").keymaps()
-      end,
-      desc = "Find keymaps",
-    },
-  },
+  -- keys = {
+  --   {
+  --     "<leader>ff",
+  --     function()
+  --       require("telescope.builtin").find_files({
+  --         -- find_command = { "rg", "--files", "--iglob", "!.git", "--hidden" },
+  --         find_command = { "rg", "--files", "--iglob", "!.git" },
+  --       })
+  --     end,
+  --     desc = "Find files",
+  --   },
+  --   {
+  --     "<leader>fg",
+  --     function()
+  --       require("telescope.builtin").live_grep()
+  --     end,
+  --     desc = "Grep",
+  --   },
+  --   {
+  --     "<leader>fb",
+  --     function()
+  --       require("telescope.builtin").buffers()
+  --     end,
+  --     desc = "Find in open buffers",
+  --   },
+  --   {
+  --     "<leader>fh",
+  --     function()
+  --       require("telescope.builtin").help_tags()
+  --     end,
+  --     desc = "Help pages",
+  --   },
+  --   {
+  --     "<leader>fc",
+  --     function()
+  --       require("telescope.builtin").commands()
+  --     end,
+  --     desc = "Find commands",
+  --   },
+  --   {
+  --     "<leader>fk",
+  --     function()
+  --       require("telescope.builtin").keymaps()
+  --     end,
+  --     desc = "Find keymaps",
+  --   },
+  -- },
 }

@@ -4,14 +4,14 @@ return {
   dependencies = { "nvim-telescope/telescope.nvim", "garymjr/nvim-snippets" },
   keys = {
     {
-      "<leader>se",
+      "<leader>cse",
       function()
         require("scissors").editSnippet()
       end,
       desc = "Edit snippet",
     },
     {
-      "<leader>sa",
+      "<leader>csa",
       function()
         require("scissors").addNewSnippet()
       end,
