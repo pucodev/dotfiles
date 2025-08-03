@@ -6,3 +6,6 @@ require("config.autocomplete")
 
 require("config.settings")
 require("config.keymaps")
+
+-- Loading environment variables from .env
+require("util.dotenv")

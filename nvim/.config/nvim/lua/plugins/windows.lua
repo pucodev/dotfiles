@@ -10,15 +10,15 @@ return {
     vim.o.winminwidth = 10
     vim.o.equalalways = false
     require("windows").setup({
-      ignore = {			
-          filetype = { "snacks_layout_box" }
+      ignore = {
+        filetype = { "snacks_layout_box", "AvanteInput", "Avante" },
       },
       animation = {
-          enable = true,
-          duration = 150,
-          fps = 30,
-          easing = "in_out_sine"
-      }
+        enable = true,
+        duration = 150,
+        fps = 30,
+        easing = "in_out_sine",
+      },
     })
   end,
 }
