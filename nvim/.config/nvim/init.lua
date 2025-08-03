@@ -1,12 +1,8 @@
 require("config.lazy")
 require("config.lsp")
+require("config.formatters")
+require("config.luasnip")
+require("config.autocomplete")
 
 require("config.settings")
 require("config.keymaps")
-
-vim.filetype.add({
-  extension = {
-    mdx = "mdx",
-    md = "markdown",
-  },
-})
