@@ -40,6 +40,7 @@ conform.setup({
     vue = { "prettierd" },
     yaml = { "prettierd" },
     markdown = { "prettierd" },
+    mdx = { "prettierd" },
   },
   format_on_save = {
     lsp_fallback = true,

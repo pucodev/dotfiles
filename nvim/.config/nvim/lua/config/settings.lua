@@ -82,3 +82,9 @@ end, { desc = "Previous diagnostic" })
 vim.keymap.set("n", "<leader>dn", function()
   vim.diagnostic.jump({ count = 1, float = false })
 end, { desc = "Next diagnostic" })
+
+vim.filetype.add({
+  extension = {
+    mdx = "mdx",
+  },
+})

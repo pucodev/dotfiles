@@ -32,7 +32,7 @@ M.ensure_npm_binary = function(package_name, opts)
 
   -- If already installed, use it
   if vim.loop.fs_stat(node_dir) then
-    vim.notify("🚀 '" .. install_dir .. "' is already installed.", vim.log.levels.INFO)
+    -- vim.notify("🚀 '" .. install_dir .. "' is already installed.", vim.log.levels.INFO)
     if opts.on_success then
       opts.on_success(install_dir)
     end
