@@ -1,0 +1,6 @@
+git:
+  paging:
+    colorArg: always
+    # Install Delta
+    # https://github.com/dandavison/delta
+    pager: delta --dark --paging=never --syntax-theme base16-256 -s --wrap-max-lines=10
