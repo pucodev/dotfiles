@@ -86,3 +86,27 @@ npm.ensure_npm_binary(mdx_plugin, {
     })
   end,
 })
+
+-- EMMET
+-- add md and mdx to filetypes
+vim.lsp.config("emmet_language_server", {
+  filetypes = {
+    "astro",
+    "css",
+    "eruby",
+    "html",
+    "htmlangular",
+    "htmldjango",
+    "javascriptreact",
+    "less",
+    "pug",
+    "sass",
+    "scss",
+    "svelte",
+    "templ",
+    "typescriptreact",
+    "vue",
+    "markdown",
+    "mdx",
+  },
+})

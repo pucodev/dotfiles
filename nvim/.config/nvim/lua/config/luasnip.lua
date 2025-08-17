@@ -46,3 +46,7 @@ vim.keymap.set("i", "<c-l>", function()
     luasnip.change_choice(1)
   end
 end)
+
+-- add html snippets to md and mdx
+luasnip.filetype_extend("mdx", { "html", "javascript", "markdown" })
+luasnip.filetype_extend("markdown", { "html" })

@@ -30,6 +30,7 @@ conform.setup({
     javascript = { "prettierd" },
     javascriptreact = { "prettierd" },
     json = { "prettierd" },
+    jsonc = { "prettierd" },
     lua = { "stylua" },
     php = { "pretty-php" },
     python = { "isort", "black" },
