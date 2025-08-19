@@ -1,24 +1,26 @@
 # Pucodev dotfiles
 
-Este repositorio contiene mis archivos de configuración personal (dotfiles) para Linux.
+[Read in Spanish 🇪🇸](./README.es.md)
 
-## Instalación
+This repository contains my personal configuration files (dotfiles) for Linux.
 
-Para instalar cualquier configuración, usa [GNU Stow](https://www.gnu.org/software/stow/) para crear enlaces simbólicos en tu directorio home (`~`).
+## Installation
 
-Ejemplo:
+To install any configuration, use [GNU Stow](https://www.gnu.org/software/stow/) to create symbolic links in your home directory (`~`).
+
+Example:
 
 ```sh
 stow -t ~ {FOLDER_NAME}
 ```
 
-Donde `{FOLDER_NAME}` es la carpeta que quieres instalar, por ejemplo: `nvim`, `tmux`, etc.
+Where `{FOLDER_NAME}` is the folder you want to install, for example: `nvim`, `tmux`, etc.
 
-## Estructura
+## Structure
 
-- `nvim/` — Configuración de Neovim, plugins y utilidades
-- `tmux/` — Configuración de tmux
-- `kitty/` — Configuración de kitty
+- `nvim/` — Neovim configuration, plugins, and utilities
+- `tmux/` — tmux configuration
+- `kitty/` — kitty configuration
 
 ```sh
 stow -t ~ nvim
