@@ -30,7 +30,25 @@ vim.opt.wrap = false -- Disable line wrap
 -- Folding.
 vim.o.foldcolumn = "1"
 vim.o.foldlevelstart = 99
-vim.wo.foldtext = ""
+vim.wo.foldmethod = "expr"
+vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.fillchars = {
+  foldopen = "",
+  foldclose = "",
+  fold = " ",
+  foldsep = " ",
+  diff = "╱",
+  eob = " ",
+}
+vim.opt.foldlevel = 99
+
+function _G.FoldText()
+  local text = vim.fn.getline(vim.v.foldstart)
+  local count = vim.v.foldend - vim.v.foldstart + 1
+  local suffix = "  󰁂 " .. count .. "  "
+  return text .. suffix
+end
+vim.opt.foldtext = "v:lua.FoldText()"
 
 -- Case insensitive searching UNLESS /C or the search has capitals.
 vim.o.ignorecase = true
