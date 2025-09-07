@@ -1,5 +1,6 @@
 return {
   "David-Kunz/gen.nvim",
+  lazy = false,
   opts = {
     model = "qwen2.5-coder:0.5b", -- The default model to use.
     quit_map = "q", -- set keymap to close the response window
