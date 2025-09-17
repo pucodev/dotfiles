@@ -28,7 +28,6 @@ return {
     scope = { enabled = true },
     scroll = { enabled = true },
     statuscolumn = { enabled = false },
-    words = { enabled = true },
 
     picker = {
       enabled = true,
@@ -37,7 +36,7 @@ return {
           hidden = true,
           include = { ".env", ".env.*" },
           -- auto_close = true,
-          jump = { close = true },
+          -- jump = { close = true },
         },
       },
     },

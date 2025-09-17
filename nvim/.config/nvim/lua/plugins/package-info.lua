@@ -1,6 +1,7 @@
 return {
   "vuki656/package-info.nvim",
   dependencies = { "MunifTanjim/nui.nvim" },
+  ft = "json",
   keys = {
     {
       "<leader>cpt",
@@ -40,7 +41,9 @@ return {
     },
   },
   opts = {
-    package_manager = "pnpm",
-    hide_up_to_date = true,
+    --   package_manager = "pnpm",
+    --   hide_up_to_date = true,
+    autostart = true,
+    notifications = true,
   },
 }

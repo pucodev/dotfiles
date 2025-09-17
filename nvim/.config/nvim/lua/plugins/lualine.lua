@@ -58,21 +58,21 @@ return {
         lualine_x = {
           {
             get_clients,
-            icon = { "" },
+            icon = { " " },
             color = {
               fg = "#91d7e3",
             },
           },
           {
             get_lint,
-            icon = { "" },
+            icon = { " " },
             color = {
               fg = "#f5a97f",
             },
           },
           {
             get_formatter,
-            icon = { "󰉡" },
+            icon = { "󰉡 " },
             color = {
               fg = "#c6a0f6",
             },

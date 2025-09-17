@@ -1,10 +1,6 @@
 return {
-  -- "echasnovski/mini.comment",
   "folke/ts-comments.nvim",
-  version = "*",
-  opts = {
-    -- options = {
-    --   ignore_blank_line = true,
-    -- },
-  },
+  opts = {},
+  event = "VeryLazy",
+  enabled = vim.fn.has("nvim-0.10.0") == 1,
 }

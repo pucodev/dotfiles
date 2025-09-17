@@ -8,4 +8,7 @@ return {
   { "hrsh7th/cmp-cmdline" },
   { "hrsh7th/cmp-git" },
   { "saadparwaiz1/cmp_luasnip" },
+  { "hrsh7th/cmp-emoji" },
+  { "chrisgrieser/cmp-nerdfont" },
+  { "SergioRibera/cmp-dotenv" },
 }

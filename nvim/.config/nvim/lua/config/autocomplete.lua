@@ -64,6 +64,7 @@ cmp.setup({
   },
   formatting = {
     format = function(entry, vim_item)
+      -- vim.notify("Item " .. vim_item.kind .. " - " .. entry.source.name)
       -- Kind icons
       vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind) -- This concatenates the icons with the name of the item kind
       -- Source
@@ -73,6 +74,9 @@ cmp.setup({
         luasnip = "[LuaSnip]",
         nvim_lua = "[Lua]",
         latex_symbols = "[LaTeX]",
+        emoji = "[Emoji]",
+        nerdfont = "[Nerdfont]",
+        dotenv = "[env]",
       })[entry.source.name]
       return vim_item
     end,
@@ -83,20 +87,22 @@ cmp.setup({
     ["<C-Space>"] = cmp.mapping.complete(),
     ["<C-e>"] = cmp.mapping.abort(),
 
+    ["<CR>"] = cmp.mapping.confirm({ select = false }),
     -- https://github.com/hrsh7th/nvim-cmp/wiki/Example-mappings#luasnip
-    ["<CR>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        if luasnip.expandable() then
-          luasnip.expand()
-        else
-          cmp.confirm({
-            select = true,
-          })
-        end
-      else
-        fallback()
-      end
-    end),
+    -- ["<CR>"] = cmp.mapping(function(fallback)
+    --   if cmp.visible() then
+    --     if luasnip.expandable() then
+    --       vim.notify("Lua snip expan")
+    --       luasnip.expand()
+    --     else
+    --       vim.notify("confirm false")
+    --       cmp.mapping.confirm({ select = false })
+    --     end
+    --   else
+    --     vim.notify("Fallback")
+    --     fallback()
+    --   end
+    -- end),
 
     ["<Tab>"] = cmp.mapping(function(fallback)
       if neogen.jumpable() then
@@ -127,6 +133,9 @@ cmp.setup({
     { name = "path" },
     { name = "luasnip" },
     { name = "buffer" },
+    { name = "emoji" },
+    { name = "nerdfont" },
+    { name = "dotenv" },
   },
   snippet = {
     expand = function(args)
