@@ -3,9 +3,17 @@ return {
   -- follow latest release.
   version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
   dependencies = { "rafamadriz/friendly-snippets" },
+  event = "VeryLazy",
   config = function()
     local filepath = vim.api.nvim_buf_get_name(0)
+    local my_snippets = os.getenv("MY_SNIPPETS_DIR")
+    local paths = { filepath .. "/.vscode" }
+
+    if my_snippets and my_snippets ~= "" then
+      table.insert(paths, my_snippets)
+    end
+
     require("luasnip.loaders.from_vscode").lazy_load()
-    require("luasnip.loaders.from_vscode").load({ paths = { filepath .. "/.vscode" } })
+    require("luasnip.loaders.from_vscode").load({ paths = paths })
   end,
 }
