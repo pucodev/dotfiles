@@ -26,7 +26,7 @@ return {
     notifier = { enabled = true },
     quickfile = { enabled = true },
     scope = { enabled = true },
-    scroll = { enabled = true },
+    scroll = { enabled = false },
     statuscolumn = { enabled = false },
 
     picker = {
@@ -36,7 +36,7 @@ return {
           hidden = true,
           include = { ".env", ".env.*" },
           -- auto_close = true,
-          -- jump = { close = true },
+          jump = { close = true },
         },
       },
     },
