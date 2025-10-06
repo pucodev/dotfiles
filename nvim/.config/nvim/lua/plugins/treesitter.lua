@@ -6,6 +6,7 @@ return {
     main = "nvim-treesitter.configs",
     opts = {
       ensure_installed = {
+        "astro",
         "dockerfile",
         "html",
         "javascript",
@@ -25,6 +26,7 @@ return {
         "vim",
         "vimdoc",
         "vue",
+        "xml",
         "yaml",
       },
       sync_install = false,

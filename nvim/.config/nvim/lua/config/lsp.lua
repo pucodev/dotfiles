@@ -49,14 +49,18 @@ require("mason-lspconfig").setup({
     },
   },
   ensure_installed = {
-    "lua_ls",
-    "intelephense",
+    "astro",
+    "cssls",
     "docker_compose_language_service",
+    "docker_language_server",
     "dockerls",
-    "pyright",
-    "vtsls",
-    "mdx_analyzer",
     "emmet_language_server",
+    "intelephense",
+    "lua_ls",
+    "mdx_analyzer",
+    "pyright",
+    "somesass_ls",
+    "vtsls",
   },
 })
 

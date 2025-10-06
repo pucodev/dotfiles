@@ -11,4 +11,5 @@ return {
   { "hrsh7th/cmp-emoji" },
   { "chrisgrieser/cmp-nerdfont" },
   { "SergioRibera/cmp-dotenv" },
+  { "roginfarrer/cmp-css-variables" },
 }

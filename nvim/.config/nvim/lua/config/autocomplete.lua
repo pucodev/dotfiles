@@ -77,6 +77,8 @@ cmp.setup({
         emoji = "[Emoji]",
         nerdfont = "[Nerdfont]",
         dotenv = "[env]",
+        path = "[Path]",
+        ["css-variables"] = "[css-variable]",
       })[entry.source.name]
       return vim_item
     end,
@@ -136,6 +138,7 @@ cmp.setup({
     { name = "emoji" },
     { name = "nerdfont" },
     { name = "dotenv" },
+    { name = "css-variables" },
   },
   snippet = {
     expand = function(args)

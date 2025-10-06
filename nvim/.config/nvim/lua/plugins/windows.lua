@@ -11,7 +11,14 @@ return {
     vim.o.equalalways = false
     require("windows").setup({
       ignore = {
-        filetype = { "snacks_layout_box", "AvanteInput", "Avante" },
+        filetype = {
+          "snacks_layout_box",
+          "AvanteInput",
+          "Avante",
+          "grug-far",
+          "grug-far-history",
+          "grug-far-help",
+        },
       },
       animation = {
         enable = true,

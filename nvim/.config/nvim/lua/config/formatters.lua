@@ -24,6 +24,7 @@ conform.setup({
   formatters_by_ft = {
     css = { "prettierd" },
     scss = { "prettierd" },
+    astro = { "prettierd" },
     sass = { "prettierd" },
     graphql = { "prettierd" },
     html = { "prettierd" },
