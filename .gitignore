@@ -3,3 +3,5 @@ node_modules
 .stfolder
 pdsamples
 *.log
+.env
+*.env
