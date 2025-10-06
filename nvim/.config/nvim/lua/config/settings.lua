@@ -60,8 +60,16 @@ vim.opt.colorcolumn = "80"
 -- Fix markdown indentation settings
 vim.g.markdown_recommended_style = 0
 
--- Cambiamos el color de la seleccion
+-- We change the selection color
 vim.cmd("hi Visual cterm=bold gui=bold guibg=#006991")
+
+-- Option to detect external changes
+vim.opt.autoread = true
+
+-- Autocommand to refresh buffers when returning to Neovim
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold" }, {
+  command = "checktime",
+})
 
 -- **********************
 -- Config diagnostic
@@ -104,5 +112,13 @@ end, { desc = "Next diagnostic" })
 vim.filetype.add({
   extension = {
     mdx = "mdx",
+  },
+})
+
+-- Set docker compose filetype
+vim.filetype.add({
+  pattern = {
+    ["docker%-compose%.ya?ml"] = "yaml.docker-compose",
+    ["compose%.ya?ml"] = "yaml.docker-compose",
   },
 })
