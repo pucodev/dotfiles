@@ -78,6 +78,8 @@ cmp.setup({
         nerdfont = "[Nerdfont]",
         dotenv = "[env]",
         path = "[Path]",
+        pucoui = "[pucoui]",
+        ["pucoui-vars"] = "[pucoui vars]",
         ["css-variables"] = "[css-variable]",
       })[entry.source.name]
       return vim_item
@@ -138,6 +140,8 @@ cmp.setup({
     { name = "emoji" },
     { name = "nerdfont" },
     { name = "dotenv" },
+    { name = "pucoui" },
+    { name = "pucoui-vars" },
     { name = "css-variables" },
   },
   snippet = {

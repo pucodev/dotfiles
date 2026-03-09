@@ -36,7 +36,7 @@ return {
           hidden = true,
           include = { ".env", ".env.*" },
           -- auto_close = true,
-          jump = { close = true },
+          -- jump = { close = true },
         },
       },
     },
@@ -44,19 +44,49 @@ return {
 
   keys = {
     -- ==========
+    -- BUFFERS
+    -- ==========
+    {
+      "<leader>bd",
+      function()
+        require("snacks").bufdelete()
+      end,
+      desc = "Delete all buffers",
+    },
+    {
+      "<leader>bo",
+      function()
+        require("snacks").bufdelete.other()
+      end,
+      desc = "Delete other buffers",
+    },
+    {
+      "<leader>ba",
+      function()
+        require("snacks").bufdelete.all()
+      end,
+      desc = "Delete other buffers",
+    },
+    -- ==========
     -- EXPLORER
     -- ==========
     {
       "<leader>fe",
       function()
-        require("snacks").explorer({ cwd = vim.uv.cwd() })
+        local explorer = require("snacks").picker.get({ source = "explorer" })[1]
+
+        if explorer then
+          explorer:focus()
+        else
+          require("snacks").explorer.open({ cwd = vim.uv.cwd() })
+        end
       end,
       desc = "Explorer Snacks (root dir)",
     },
     {
       "<leader>fE",
       function()
-        require("snacks").explorer()
+        require("snacks").explorer.open()
       end,
       desc = "Explorer Snacks (cwd)",
     },

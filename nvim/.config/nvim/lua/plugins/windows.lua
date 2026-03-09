@@ -1,31 +1,31 @@
-return {
-  "anuvyklack/windows.nvim",
-  -- lazy = false,
-  dependencies = {
-    "anuvyklack/middleclass",
-    "anuvyklack/animation.nvim",
-  },
-  config = function()
-    vim.o.winwidth = 10
-    vim.o.winminwidth = 10
-    vim.o.equalalways = false
-    require("windows").setup({
-      ignore = {
-        filetype = {
-          "snacks_layout_box",
-          "AvanteInput",
-          "Avante",
-          "grug-far",
-          "grug-far-history",
-          "grug-far-help",
-        },
-      },
-      animation = {
-        enable = true,
-        duration = 150,
-        fps = 30,
-        easing = "in_out_sine",
-      },
-    })
-  end,
-}
+return {}
+-- return {
+--   "anuvyklack/windows.nvim",
+--   -- lazy = false,
+--   dependencies = {
+--     "anuvyklack/middleclass",
+--     "anuvyklack/animation.nvim",
+--   },
+--   config = function()
+--     vim.o.winwidth = 10
+--     vim.o.winminwidth = 10
+--     vim.o.equalalways = false
+--     require("windows").setup({
+--       ignore = {
+--         filetype = {
+--           "grug-far",
+--           "grug-far-help",
+--           "grug-far-history",
+--           "query",
+--           "snacks_layout_box",
+--         },
+--       },
+--       animation = {
+--         enable = true,
+--         duration = 150,
+--         fps = 30,
+--         easing = "in_out_sine",
+--       },
+--     })
+--   end,
+-- }

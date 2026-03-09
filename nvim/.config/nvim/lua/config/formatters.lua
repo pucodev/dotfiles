@@ -13,6 +13,7 @@ mason_tool_installer.setup({
     "pylint", -- python linter
     "sql-formatter", -- sql
     "stylua", -- lua formatter
+    "xmlformatter", -- xml
   },
 })
 
@@ -22,10 +23,8 @@ mason_tool_installer.setup({
 local conform = require("conform")
 conform.setup({
   formatters_by_ft = {
-    css = { "prettierd" },
-    scss = { "prettierd" },
     astro = { "prettierd" },
-    sass = { "prettierd" },
+    css = { "prettierd" },
     graphql = { "prettierd" },
     html = { "prettierd" },
     javascript = { "prettierd" },
@@ -33,16 +32,19 @@ conform.setup({
     json = { "prettierd" },
     jsonc = { "prettierd" },
     lua = { "stylua" },
+    markdown = { "prettierd" },
+    mdx = { "prettierd" },
     php = { "pretty-php" },
     python = { "isort", "black" },
+    sass = { "prettierd" },
+    scss = { "prettierd" },
     sql = { "sql-formatter" },
     svelte = { "prettierd" },
     typescript = { "prettierd" },
     typescriptreact = { "prettierd" },
     vue = { "prettierd" },
+    xml = { "xmlformatter" },
     yaml = { "prettierd" },
-    markdown = { "prettierd" },
-    mdx = { "prettierd" },
   },
   format_on_save = {
     lsp_fallback = true,

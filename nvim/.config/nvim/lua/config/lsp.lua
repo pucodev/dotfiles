@@ -74,7 +74,7 @@ local mdx_plugin = "@mdx-js/typescript-plugin"
 npm.ensure_npm_binary(mdx_plugin, {
   on_success = function()
     local mdx_lsp_path = npm.get_package_path() .. "/" .. mdx_plugin
-    require("lspconfig").vtsls.setup({
+    vim.lsp.config("vtsls", {
       settings = {
         vtsls = {
           autoUseWorkspaceTsdk = true,
@@ -102,6 +102,34 @@ npm.ensure_npm_binary(mdx_plugin, {
         "mdx",
       },
     })
+    -- require("lspconfig").vtsls.setup({
+    --   settings = {
+    --     vtsls = {
+    --       autoUseWorkspaceTsdk = true,
+    --       tsserver = {
+    --         globalPlugins = {
+    --           {
+    --             name = "@mdx-js/typescript-plugin",
+    --             enableForWorkspaceTypeScriptVersions = true,
+    --             location = mdx_lsp_path,
+    --             languages = {
+    --               "mdx",
+    --             },
+    --           },
+    --         },
+    --       },
+    --     },
+    --   },
+    --   filetypes = {
+    --     "javascript",
+    --     "javascriptreact",
+    --     "javascript.jsx",
+    --     "typescript",
+    --     "typescriptreact",
+    --     "typescript.tsx",
+    --     "mdx",
+    --   },
+    -- })
   end,
 })
 

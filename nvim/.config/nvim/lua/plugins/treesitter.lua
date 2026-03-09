@@ -1,9 +1,11 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
+    branch = "master",
     build = ":TSUpdate",
     event = "VeryLazy",
     main = "nvim-treesitter.configs",
+    config = true,
     opts = {
       ensure_installed = {
         "astro",
@@ -16,6 +18,8 @@ return {
         "luadoc",
         "markdown",
         "markdown_inline",
+        "css",
+        "scss",
         "php",
         "phpdoc",
         "python",

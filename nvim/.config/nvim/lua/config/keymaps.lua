@@ -21,7 +21,7 @@ map("n", "[b", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
 map("n", "]b", "<cmd>bnext<cr>", { desc = "Next Buffer" })
 map("n", "<leader>bb", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
 map("n", "<leader>`", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
-map("n", "<leader>bd", "<cmd>:bd<cr>", { desc = "Delete Buffer and Window" })
+-- map("n", "<leader>bD", "<cmd>:bd<cr>", { desc = "Delete Buffer and Window" })
 
 -- Clear search with <esc>
 map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and Clear hlsearch" })
@@ -117,4 +117,29 @@ map({ "n", "x", "v" }, "<leader>wh", "<cmd>WindowsMaximizeHorizontally<cr>", {
 })
 map({ "n", "x", "v" }, "<leader>we", "<cmd>WindowsEqualize<cr>", {
   desc = "Toggle Equalize Window",
+})
+
+-- Most usual commands
+map({ "n", "x", "v" }, "<leader><leader>xn", "<cmd>bnext<cr>", {
+  desc = "Go to next buffer",
+})
+
+map({ "n", "x", "v" }, "<leader><leader>xp", "<cmd>bprevious<cr>", {
+  desc = "Go to previous buffer",
+})
+
+map({ "n", "x", "v" }, "<leader><leader>xl", "<cmd>LspInfo<cr>", {
+  desc = "Show LSP info",
+})
+
+map({ "n", "x", "v" }, "<leader><leader>xt", "<cmd>InspectTree<cr>", {
+  desc = "Show Treesitter",
+})
+
+map("v", "<leader><leader>xs", ":sort i<cr>", {
+  desc = "Sort lines",
+})
+
+map("n", "<leader><leader>xs", "", {
+  desc = "Sort lines",
 })
