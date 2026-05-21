@@ -20,7 +20,12 @@ return {
         { section = "startup" },
       },
     },
-    explorer = { enabled = true },
+    explorer = {
+      enabled = true,
+      hidden = true,
+      ignored = true,
+      exclude = { "**/node_modules" },
+    },
     indent = { enabled = false },
     input = { enabled = true },
     notifier = { enabled = true },
@@ -34,9 +39,24 @@ return {
       sources = {
         explorer = {
           hidden = true,
+          ignored = true,
           include = { ".env", ".env.*" },
-          -- auto_close = true,
-          -- jump = { close = true },
+          jump = { close = true },
+          exclude = { "**/node_modules" },
+        },
+        files = {
+          hidden = true,
+          ignored = true,
+          exclude = { "**/node_modules" },
+        },
+        grep = {
+          hidden = true,
+          ignored = true,
+          exclude = { "**/node_modules" },
+        },
+        grep_buffers = {
+          hidden = true,
+          ignored = true,
         },
       },
     },
@@ -78,17 +98,61 @@ return {
         if explorer then
           explorer:focus()
         else
-          require("snacks").explorer.open({ cwd = vim.uv.cwd() })
+          require("snacks").explorer.open({ cwd = vim.uv.cwd(), jump = { close = true } })
         end
       end,
-      desc = "Explorer Snacks (root dir)",
+      desc = "Explorer Snacks (root dir, auto-close)",
     },
     {
       "<leader>fE",
       function()
-        require("snacks").explorer.open()
+        require("snacks").explorer.open({ jump = { close = true } })
       end,
-      desc = "Explorer Snacks (cwd)",
+      desc = "Explorer Snacks (cwd, auto-close)",
+    },
+    {
+      "<leader>fw",
+      function()
+        local explorer = require("snacks").picker.get({ source = "explorer" })[1]
+
+        if explorer then
+          explorer:focus()
+        else
+          require("snacks").explorer.open({ cwd = vim.uv.cwd(), jump = { close = false } })
+        end
+      end,
+      desc = "Explorer Snacks (root dir, no close)",
+    },
+    {
+      "<leader>fW",
+      function()
+        require("snacks").explorer.open({ jump = { close = false } })
+      end,
+      desc = "Explorer Snacks (cwd, no close)",
+    },
+    {
+      "<leader>fa",
+      function()
+        local explorer = require("snacks").picker.get({ source = "explorer" })[1]
+
+        if explorer then
+          explorer:close()
+        end
+        require("snacks").explorer.open({ cwd = vim.uv.cwd(), exclude = {} })
+      end,
+      desc = "Explorer Snacks (root dir, show all)",
+    },
+    {
+      "<leader>fA",
+      function()
+        local explorer = require("snacks").picker.get({ source = "explorer" })[1]
+
+        if explorer then
+          explorer:close()
+        end
+        require("snacks").explorer.open({ exclude = {} })
+      end,
+      desc = "Explorer Snacks (cwd, show all)",
     },
     {
       "<leader>e",
@@ -385,9 +449,13 @@ return {
     {
       "<leader>gs",
       function()
-        require("snacks").picker.git_status()
+        require("snacks").picker.git_status({
+          layout = { preset = "sidebar" },
+          auto_close = false,
+          jump = { close = false },
+        })
       end,
-      desc = "Git Status",
+      desc = "Git Status (sidebar)",
     },
     {
       "<leader>gS",

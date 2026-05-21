@@ -143,3 +143,11 @@ map("v", "<leader><leader>xs", ":sort i<cr>", {
 map("n", "<leader><leader>xs", "", {
   desc = "Sort lines",
 })
+
+-- Text casing
+vim.keymap.set(
+  "v",
+  "gt",
+  [[:s/\%V\w\+/\=toupper(submatch(0)[0]) . tolower(submatch(0)[1:])/g<CR>]],
+  { desc = "Title Case selección" }
+)

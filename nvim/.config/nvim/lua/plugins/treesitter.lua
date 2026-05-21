@@ -9,6 +9,8 @@ return {
     opts = {
       ensure_installed = {
         "astro",
+        "bash",
+        "css",
         "dockerfile",
         "html",
         "javascript",
@@ -18,12 +20,11 @@ return {
         "luadoc",
         "markdown",
         "markdown_inline",
-        "css",
-        "scss",
         "php",
         "phpdoc",
         "python",
         "regex",
+        "scss",
         "sql",
         "tsx",
         "typescript",

@@ -122,3 +122,11 @@ vim.filetype.add({
     ["compose%.ya?ml"] = "yaml.docker-compose",
   },
 })
+
+-- Set env file
+vim.filetype.add({
+  pattern = {
+    ["%.env%..+"] = "sh",
+    ["%.env"] = "sh",
+  },
+})

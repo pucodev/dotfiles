@@ -12,6 +12,8 @@ return {
         { "<leader>c", group = "code" },
         { "<leader>cs", group = "snippets" },
         { "<leader>f", group = "file/find" },
+        { "<leader>fw", group = "explorer (no close)" },
+        { "<leader>fa", group = "explorer (show all)" },
         { "<leader>g", group = "git" },
         { "<leader><space>", group = "custom keys", icon = { icon = " " } },
         -- { "<leader>gh", group = "hunks" },
